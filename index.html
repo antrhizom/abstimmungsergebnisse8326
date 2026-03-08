@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstimmungssonntag 8. März 2026 – Interaktive Lernkontrolle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- PHASE 1: STARTSEITE                          -->
+<!-- ============================================ -->
+<div id="phase-start" class="phase active">
+  <header class="hero">
+    <div class="hero-content">
+      <div class="swiss-cross">+</div>
+      <h1>Abstimmungssonntag</h1>
+      <p class="hero-date">8. März 2026</p>
+      <p class="hero-sub">Interaktive Lernkontrolle zu den eidgenössischen, kantonalen und kommunalen Vorlagen</p>
+    </div>
+  </header>
+
+  <section class="start-section">
+    <h2>So funktioniert's</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-num">1</span>
+        <h3>Schlagzeilen lesen</h3>
+        <p>Pro Register findest du die wichtigsten Ergebnisse und Stimmen – ohne Fragen.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">2</span>
+        <h3>Vorlagen vertiefen</h3>
+        <p>Öffne die SRF-Seite zur Vorlage und bearbeite die interaktive Lernbestätigung.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">3</span>
+        <h3>Zertifikat erhalten</h3>
+        <p>Am Schluss erhältst du ein persönliches Zertifikat mit einzigartigem Code.</p>
+      </div>
+    </div>
+
+    <div class="name-input-area">
+      <label for="userName">Dein Name für das Zertifikat:</label>
+      <input type="text" id="userName" placeholder="Vorname Nachname" autocomplete="name">
+    </div>
+
+    <h2>Wähle deine Vorlagen</h2>
+    <p class="selection-hint">Wähle mindestens <strong>2 Bundesvorlagen</strong> und je <strong>1 kantonale / kommunale Vorlage</strong>. Die Wahlen ZH/Winterthur sind optional.</p>
+
+    <!-- Auswahl Bund -->
+    <div class="selection-group">
+      <h3>Bund <span class="req-badge">mind. 2 von 4</span></h3>
+      <div class="checkbox-grid">
+        <label class="topic-checkbox">
+          <input type="checkbox" name="bund" value="individualbesteuerung">
+          <span class="cb-card">
+            <strong>Individualbesteuerung</strong>
+            <small>Abschaffung der Heiratsstrafe</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="bund" value="srg">
+          <span class="cb-card">
+            <strong>SRG-Initiative</strong>
+            <small>«200 Franken sind genug!»</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="bund" value="klimafonds">
+          <span class="cb-card">
+            <strong>Klimafonds-Initiative</strong>
+            <small>Mehr Mittel für Klimaschutz</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="bund" value="bargeld">
+          <span class="cb-card">
+            <strong>Bargeld-Initiative</strong>
+            <small>Verfassungsverankerung + Gegenentwurf</small>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Auswahl Kantonal -->
+    <div class="selection-group">
+      <h3>Kantonal <span class="req-badge">mind. 1 von 3</span></h3>
+      <div class="checkbox-grid">
+        <label class="topic-checkbox">
+          <input type="checkbox" name="kantonal" value="solothurn">
+          <span class="cb-card">
+            <strong>Solothurn</strong>
+            <small>Höhere Kinder- und Ausbildungszulagen</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="kantonal" value="aargau">
+          <span class="cb-card">
+            <strong>Aargau</strong>
+            <small>Bewilligungspflicht Radaranlagen</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="kantonal" value="baselland">
+          <span class="cb-card">
+            <strong>Basel-Landschaft</strong>
+            <small>Tempo-30-Zonen auf Hauptstrassen</small>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Auswahl Kommunal -->
+    <div class="selection-group">
+      <h3>Kommunal <span class="req-badge">mind. 1 von 3</span></h3>
+      <div class="checkbox-grid">
+        <label class="topic-checkbox">
+          <input type="checkbox" name="kommunal" value="schaffhausen">
+          <span class="cb-card">
+            <strong>Schaffhausen</strong>
+            <small>ÖV-Mitfinanzierung durch Kanton</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="kommunal" value="uri">
+          <span class="cb-card">
+            <strong>Uri</strong>
+            <small>Abwahlentschädigung Regierungsräte</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="kommunal" value="baselstadt">
+          <span class="cb-card">
+            <strong>Basel-Stadt</strong>
+            <small>E-Voting-Panne: 2048 Stimmen ungültig</small>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Auswahl Wahlen -->
+    <div class="selection-group">
+      <h3>Wahlen ZH / Winterthur <span class="req-badge optional">optional</span></h3>
+      <div class="checkbox-grid">
+        <label class="topic-checkbox">
+          <input type="checkbox" name="wahlen" value="zuerich">
+          <span class="cb-card">
+            <strong>Stadtratswahlen Zürich</strong>
+            <small>9 Sitze – Wer schafft den Sprung?</small>
+          </span>
+        </label>
+        <label class="topic-checkbox">
+          <input type="checkbox" name="wahlen" value="winterthur">
+          <span class="cb-card">
+            <strong>Stadtratswahlen Winterthur</strong>
+            <small>Duell ums Stadtpräsidium</small>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <button id="btnStart" class="btn-primary" disabled>Lernkontrolle starten</button>
+    <p id="startError" class="error-msg hidden"></p>
+  </section>
+</div>
+
+<!-- ============================================ -->
+<!-- PHASE 2: HAUPTBEREICH MIT TABS               -->
+<!-- ============================================ -->
+<div id="phase-main" class="phase">
+  <!-- Fortschrittsbalken -->
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progressBar">
+      <span id="progressText">0 / 0 Lernbestätigungen</span>
+    </div>
+  </div>
+
+  <!-- Tab-Navigation -->
+  <nav class="tab-nav" id="tabNav">
+    <button class="tab-btn active" data-tab="bund">Bund</button>
+    <button class="tab-btn" data-tab="kantonal">Kantonal</button>
+    <button class="tab-btn" data-tab="kommunal">Kommunal</button>
+    <button class="tab-btn" data-tab="wahlen">Wahlen ZH/WI</button>
+  </nav>
+
+  <!-- ====== TAB: BUND ====== -->
+  <div class="tab-content active" id="tab-bund">
+    <div class="headlines-ticker">
+      <h2>Die wichtigsten Schlagzeilen</h2>
+      <div class="headline-cards">
+        <div class="headline-card hl-yes">
+          <span class="hl-result">JA 56%</span>
+          <h3>Individualbesteuerung angenommen</h3>
+          <p class="hl-quote">«Das Resultat ist deutlich und eindeutig.» – Lukas Golder, GFS Bern</p>
+        </div>
+        <div class="headline-card hl-no">
+          <span class="hl-result">NEIN 62%</span>
+          <h3>SRG-Initiative abgelehnt</h3>
+          <p class="hl-quote">«Die Befürchtung, die Initiative könnte der Demokratie schaden, hat dominiert.»</p>
+        </div>
+        <div class="headline-card hl-no">
+          <span class="hl-result">NEIN 71%</span>
+          <h3>Klimafonds-Initiative gescheitert</h3>
+          <p class="hl-quote">«Eine sehr deutliche Niederlage.» – GFS Bern</p>
+        </div>
+        <div class="headline-card hl-yes">
+          <span class="hl-result">JA 73%</span>
+          <h3>Bargeld-Gegenentwurf angenommen</h3>
+          <p class="hl-quote">Erstmals seit 2010 eine Abstimmung mit Initiative, Gegenentwurf und Stichfrage.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vorlagen-Karten mit Lernbestätigungen -->
+    <div class="vorlage-list" id="vorlagen-bund">
+      <!-- Wird dynamisch befüllt basierend auf Auswahl -->
+    </div>
+  </div>
+
+  <!-- ====== TAB: KANTONAL ====== -->
+  <div class="tab-content" id="tab-kantonal">
+    <div class="headlines-ticker">
+      <h2>Kantonale Highlights</h2>
+      <div class="headline-cards">
+        <div class="headline-card hl-yes">
+          <span class="hl-result">JA 59%</span>
+          <h3>Solothurn: Höhere Familienzulagen</h3>
+          <p class="hl-quote">Fast alle Gemeinden stimmten dafür. Änderungen des Sozialgesetzes scheitern.</p>
+        </div>
+        <div class="headline-card hl-neutral">
+          <span class="hl-result">OFFEN</span>
+          <h3>Aargau: Radar-Bewilligungspflicht</h3>
+          <p class="hl-quote">Sollen stationäre Radaranlagen künftig eine Bewilligung brauchen?</p>
+        </div>
+        <div class="headline-card hl-neutral">
+          <span class="hl-result">OFFEN</span>
+          <h3>Basel-Landschaft: Tempo 30 nur mit Volksentscheid</h3>
+          <p class="hl-quote">Die Stimmberechtigten sollen bei Tempo-30-Zonen auf Hauptstrassen mitreden.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vorlage-list" id="vorlagen-kantonal">
+      <!-- Wird dynamisch befüllt -->
+    </div>
+  </div>
+
+  <!-- ====== TAB: KOMMUNAL ====== -->
+  <div class="tab-content" id="tab-kommunal">
+    <div class="headlines-ticker">
+      <h2>Kommunale Highlights</h2>
+      <div class="headline-cards">
+        <div class="headline-card hl-neutral">
+          <span class="hl-result">DEBATTE</span>
+          <h3>Schaffhausen: ÖV-Finanzierung</h3>
+          <p class="hl-quote">Soll der Kanton den ÖV stärker mitfinanzieren und die Gemeinden entlasten?</p>
+        </div>
+        <div class="headline-card hl-neutral">
+          <span class="hl-result">DEBATTE</span>
+          <h3>Uri: Abwahlentschädigung streichen?</h3>
+          <p class="hl-quote">Keine Abfindung mehr für abgewählte Regierungsräte?</p>
+        </div>
+        <div class="headline-card hl-alert">
+          <span class="hl-result">PANNE</span>
+          <h3>Basel-Stadt: E-Voting-Debakel</h3>
+          <p class="hl-quote">2048 elektronisch abgegebene Stimmen können wegen defekter USB-Sticks nicht gezählt werden.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vorlage-list" id="vorlagen-kommunal">
+      <!-- Wird dynamisch befüllt -->
+    </div>
+  </div>
+
+  <!-- ====== TAB: WAHLEN ====== -->
+  <div class="tab-content" id="tab-wahlen">
+    <div class="headlines-ticker">
+      <h2>Wahlen in Zürich & Winterthur</h2>
+      <div class="headline-cards">
+        <div class="headline-card hl-neutral">
+          <span class="hl-result">ZÜRICH</span>
+          <h3>Kampf um 9 Stadtratsitze</h3>
+          <p class="hl-quote">Balthasar Glättli (Grüne) will zurück in die Lokalpolitik. SP und FDP zittern um je einen Sitz.</p>
+        </div>
+        <div class="headline-card hl-neutral">
+          <span class="hl-result">WINTERTHUR</span>
+          <h3>Duell ums Stadtpräsidium</h3>
+          <p class="hl-quote">Nach 14 Jahren Künzle: Kopf-an-Kopf-Rennen zwischen Kaspar Bopp (SP) und Stefan Fritschi (FDP).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vorlage-list" id="vorlagen-wahlen">
+      <!-- Wird dynamisch befüllt -->
+    </div>
+  </div>
+
+  <div class="finish-area hidden" id="finishArea">
+    <button id="btnFinish" class="btn-primary btn-finish">Zertifikat erstellen</button>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PHASE 3: ZERTIFIKAT                          -->
+<!-- ============================================ -->
+<div id="phase-certificate" class="phase">
+  <div class="cert-wrapper">
+    <div class="certificate" id="certificate">
+      <div class="cert-border">
+        <div class="cert-header">
+          <div class="cert-swiss-cross">+</div>
+          <h1>Lernzertifikat</h1>
+          <p class="cert-subtitle">Abstimmungssonntag 8. März 2026</p>
+        </div>
+
+        <div class="cert-body">
+          <p class="cert-statement">Hiermit wird bestätigt, dass</p>
+          <p class="cert-name" id="certName">–</p>
+          <p class="cert-statement">sich aktiv mit den Abstimmungsvorlagen auseinandergesetzt hat.</p>
+
+          <div class="cert-stats" id="certStats">
+            <!-- Dynamisch: Anzahl Vorlagen, Lernbestätigungen, Kategorien -->
+          </div>
+
+          <div class="cert-details" id="certDetails">
+            <!-- Dynamisch: Welche Vorlagen bearbeitet -->
+          </div>
+        </div>
+
+        <div class="cert-footer">
+          <div class="cert-code-area">
+            <span class="cert-label">Zertifikat-Code</span>
+            <span class="cert-code" id="certCode">–</span>
+          </div>
+          <div class="cert-date-area">
+            <span class="cert-label">Ausgestellt am</span>
+            <span class="cert-date" id="certDate">–</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-actions no-print">
+      <div class="cert-name-edit">
+        <label for="certNameInput">Name anpassen:</label>
+        <input type="text" id="certNameInput" placeholder="Vorname Nachname">
+        <button id="btnUpdateName" class="btn-secondary">Aktualisieren</button>
+      </div>
+      <button id="btnPrint" class="btn-primary">Zertifikat drucken</button>
+      <button id="btnRestart" class="btn-secondary">Neue Lernkontrolle</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
