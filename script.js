@@ -381,6 +381,7 @@ function validateSelection() {
   const bundChecked = document.querySelectorAll('input[name="bund"]:checked').length;
   const kantonalChecked = document.querySelectorAll('input[name="kantonal"]:checked').length;
   const kommunalChecked = document.querySelectorAll('input[name="kommunal"]:checked').length;
+  const wahlenChecked = document.querySelectorAll('input[name="wahlen"]:checked').length;
   const nameVal = document.getElementById('userName').value.trim();
 
   const btnStart = document.getElementById('btnStart');
@@ -391,6 +392,7 @@ function validateSelection() {
   if (bundChecked < 2) errors.push(`Bund: mindestens 2 Vorlagen wählen (aktuell: ${bundChecked}).`);
   if (kantonalChecked < 1) errors.push(`Kantonal: mindestens 1 Vorlage wählen.`);
   if (kommunalChecked < 1) errors.push(`Kommunal: mindestens 1 Vorlage wählen.`);
+  if (wahlenChecked < 1) errors.push(`Wahlen: Zürich oder Winterthur wählen.`);
 
   if (errors.length > 0) {
     btnStart.disabled = true;

@@ -47,7 +47,7 @@
     </div>
 
     <h2>Wähle deine Vorlagen</h2>
-    <p class="selection-hint">Wähle mindestens <strong>2 Bundesvorlagen</strong> und je <strong>1 kantonale / kommunale Vorlage</strong>. Die Wahlen ZH/Winterthur sind optional.</p>
+    <p class="selection-hint">Wähle mindestens <strong>2 Bundesvorlagen</strong>, je <strong>1 kantonale / kommunale Vorlage</strong> und <strong>1 Wahl</strong> (Zürich oder Winterthur).</p>
 
     <!-- Auswahl Bund -->
     <div class="selection-group">
@@ -142,17 +142,18 @@
 
     <!-- Auswahl Wahlen -->
     <div class="selection-group">
-      <h3>Wahlen ZH / Winterthur <span class="req-badge optional">optional</span></h3>
+      <h3>Wahlen ZH / Winterthur <span class="req-badge">1 wählen</span></h3>
+      <p class="selection-hint" style="margin-bottom:0.75rem;margin-top:0;">Wähle entweder Zürich <strong>oder</strong> Winterthur.</p>
       <div class="checkbox-grid">
         <label class="topic-checkbox">
-          <input type="checkbox" name="wahlen" value="zuerich">
+          <input type="radio" name="wahlen" value="zuerich">
           <span class="cb-card">
             <strong>Stadtratswahlen Zürich</strong>
             <small>9 Sitze – Wer schafft den Sprung?</small>
           </span>
         </label>
         <label class="topic-checkbox">
-          <input type="checkbox" name="wahlen" value="winterthur">
+          <input type="radio" name="wahlen" value="winterthur">
           <span class="cb-card">
             <strong>Stadtratswahlen Winterthur</strong>
             <small>Duell ums Stadtpräsidium</small>

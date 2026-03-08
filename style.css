@@ -164,7 +164,8 @@ body {
   cursor: pointer;
   display: block;
 }
-.topic-checkbox input { display: none; }
+.topic-checkbox input[type="checkbox"],
+.topic-checkbox input[type="radio"] { display: none; }
 .cb-card {
   display: block;
   padding: 1rem;
