@@ -10,17 +10,17 @@ const VORLAGEN = {
   individualbesteuerung: {
     tab: 'bund',
     title: 'Individualbesteuerung',
-    subtitle: 'Abschaffung der «Heiratsstrafe»',
+    subtitle: 'Abschaffung der «Heiratsstrafe» – JA 54.3%',
     url: 'https://www.srf.ch/news/abstimmung-individualbesteuerung-vom-8-3-2026',
-    result: 'JA ~56%',
+    result: 'JA 54.3%',
     activities: [
       {
         type: 'slider',
         label: 'Schätzfrage',
-        question: 'Wie hoch war der Ja-Anteil bei der Individualbesteuerung laut erster Hochrechnung?',
+        question: 'Wie hoch war der Ja-Anteil bei der Individualbesteuerung?',
         min: 30, max: 80, step: 1, unit: '%',
-        correct: 56, tolerance: 3,
-        hint: 'Finde die Hochrechnungszahl auf der SRF-Seite.'
+        correct: 54, tolerance: 2,
+        hint: 'Finde die genaue Zahl auf der SRF-Resultateseite.'
       },
       {
         type: 'match',
@@ -36,17 +36,24 @@ const VORLAGEN = {
         type: 'fill',
         label: 'Lückentext',
         question: 'Ergänze die Lücken basierend auf dem SRF-Artikel.',
-        template: 'Mit der Individualbesteuerung wird jede Person ihr eigenes {0} und {1} versteuern. Für alle gilt derselbe {2}.',
-        blanks: ['Einkommen', 'Vermögen', 'Steuertarif'],
+        template: 'Mit der Individualbesteuerung wird jede Person ihr eigenes {0} und {1} versteuern. Das Gesetz ist ein indirekter {2} zur Steuergerechtigkeits-Initiative.',
+        blanks: ['Einkommen', 'Vermögen', 'Gegenvorschlag'],
+      },
+      {
+        type: 'drag',
+        label: 'Drag & Drop',
+        question: 'Welche Aussagen treffen auf die Individualbesteuerung zu?',
+        correct: ['Jede Person versteuert ihr Einkommen einzeln', 'Die SVP ergriff das Referendum', 'Abgestimmt am Internationalen Frauentag'],
+        distractors: ['Nur verheiratete Paare sind betroffen', 'Das Ständemehr war nötig', 'Die Vorlage wurde abgelehnt'],
       },
     ]
   },
   srg: {
     tab: 'bund',
     title: 'SRG-Initiative',
-    subtitle: '«200 Franken sind genug!»',
-    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmungen-vom-8-maerz-1-hochrechnung-62-nein-fuer-srg-initiative',
-    result: 'NEIN ~62%',
+    subtitle: '«200 Franken sind genug!» – NEIN 61.9%',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmungen-vom-8-maerz-srg-initiative-scheitert-am-volks-und-staendemehr',
+    result: 'NEIN 61.9%',
     activities: [
       {
         type: 'drag',
@@ -60,7 +67,7 @@ const VORLAGEN = {
         label: 'Schätzfrage',
         question: 'Wie hoch war der Nein-Anteil bei der SRG-Initiative?',
         min: 40, max: 80, step: 1, unit: '%',
-        correct: 62, tolerance: 3,
+        correct: 62, tolerance: 2,
         hint: 'Schaue auf der SRF-Resultateseite nach.'
       },
       {
@@ -74,70 +81,94 @@ const VORLAGEN = {
           'Abstimmung am 8. März 2026',
         ]
       },
+      {
+        type: 'fill',
+        label: 'Lückentext',
+        question: 'Ergänze die Lücken zum Ergebnis der SRG-Initiative.',
+        template: 'Die SRG-Initiative wurde mit {0}% Nein abgelehnt. Kein einziger {1} stimmte zu. Es fehlte sowohl das {2} als auch das Ständemehr.',
+        blanks: ['61.9', 'Kanton', 'Volksmehr'],
+      },
     ]
   },
   klimafonds: {
     tab: 'bund',
     title: 'Klimafonds-Initiative',
-    subtitle: 'Mehr Bundesmittel für Klimaschutz',
-    url: 'https://www.srf.ch/news/abstimmungen-vom-8-3-2026',
-    result: 'NEIN ~71%',
+    subtitle: 'Mehr Bundesmittel für Klimaschutz – NEIN 70.7%',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmungen-vom-8-maerz-hochrechnung-71-nein-zur-klimafonds-initiative',
+    result: 'NEIN 70.7%',
     activities: [
       {
         type: 'slider',
         label: 'Schätzfrage',
         question: 'Wie hoch war der Nein-Anteil bei der Klimafonds-Initiative?',
         min: 40, max: 90, step: 1, unit: '%',
-        correct: 71, tolerance: 3,
-        hint: 'Die Hochrechnung findest du auf srf.ch.'
+        correct: 71, tolerance: 2,
+        hint: 'Die Zahl findest du auf srf.ch.'
       },
       {
         type: 'fill',
         label: 'Lückentext',
         question: 'Ergänze die Lücken zur Klimafonds-Initiative.',
-        template: 'Der Bund soll einen {0} einrichten und jährlich {1} bis {2} Prozent des BIP einzahlen.',
-        blanks: ['Fonds', '0.5', '1'],
+        template: 'Der Bund sollte jährlich {0} bis {1} Prozent des BIP in einen Klimafonds einzahlen. Die Initiative wurde mit {2}% Nein abgelehnt.',
+        blanks: ['0.5', '1', '70.7'],
       },
       {
         type: 'match',
         label: 'Zuordnung',
-        question: 'Ordne die Ergebnisse den Vorlagen zu.',
+        question: 'Ordne die definitiven Ergebnisse den Vorlagen zu.',
         pairs: [
-          { left: 'Klimafonds', right: '~71% Nein' },
-          { left: 'SRG-Initiative', right: '~62% Nein' },
-          { left: 'Individualbesteuerung', right: '~56% Ja' },
+          { left: 'Klimafonds', right: '70.7% Nein' },
+          { left: 'SRG-Initiative', right: '61.9% Nein' },
+          { left: 'Individualbesteuerung', right: '54.3% Ja' },
         ]
+      },
+      {
+        type: 'drag',
+        label: 'Drag & Drop',
+        question: 'Welche Fakten stimmen zur Klimafonds-Initiative?',
+        correct: ['Kein Kanton stimmte zu', 'Deutlichste Niederlage des Tages', '0 von 23 Ständen dafür'],
+        distractors: ['Knapp abgelehnt', '5 Kantone stimmten zu', 'Nur am Ständemehr gescheitert'],
       },
     ]
   },
   bargeld: {
     tab: 'bund',
     title: 'Bargeld-Initiative & Gegenentwurf',
-    subtitle: 'Verfassungsverankerung des Frankens',
+    subtitle: 'Verfassungsverankerung des Frankens – Gegenentwurf JA 73.4%',
     url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmungen-vom-8-maerz-hochrechnung-ja-zum-gegenentwurf-der-bargeld-initiative-1',
-    result: 'Gegenentwurf JA ~73%',
+    result: 'Gegenentwurf JA 73.4%',
     activities: [
       {
         type: 'drag',
         label: 'Drag & Drop',
-        question: 'Was verlangt die Bargeld-Initiative? Ziehe die korrekten Forderungen in die Box.',
-        correct: ['Bargeld in Verfassung verankern', 'Genügend Münzen und Noten sicherstellen', 'Währungsersatz nur mit Volksabstimmung'],
-        distractors: ['Bargeld komplett abschaffen', 'Digitale Währung einführen', 'Goldstandard wieder einführen'],
+        question: 'Was trifft auf das Ergebnis der Bargeld-Abstimmung zu?',
+        correct: ['Gegenentwurf mit 73.4% angenommen', 'Initiative mit 54.4% abgelehnt', 'Alle 23 Stände für den Gegenentwurf'],
+        distractors: ['Initiative angenommen', 'Stichfrage war entscheidend', 'Gegenentwurf abgelehnt'],
       },
       {
         type: 'slider',
         label: 'Schätzfrage',
         question: 'Wie hoch war der Ja-Anteil zum Bargeld-Gegenentwurf?',
         min: 40, max: 90, step: 1, unit: '%',
-        correct: 73, tolerance: 3,
-        hint: 'Die GFS-Bern-Hochrechnung findest du bei SRF.'
+        correct: 73, tolerance: 2,
+        hint: 'Finde die definitive Zahl bei SRF.'
       },
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'Ergänze: Erstmals seit {0} gab es auf Bundesebene eine Abstimmung über Initiative, {1} und {2}.',
-        template: 'Erstmals seit {0} gab es auf Bundesebene eine Abstimmung über Initiative, {1} und {2}.',
-        blanks: ['2010', 'Gegenentwurf', 'Stichfrage'],
+        question: 'Ergänze: Erstmals seit {0} gab es eine Abstimmung mit Initiative, {1} und {2}. Die Stichfrage kam nicht zur Anwendung, da nur der {3} angenommen wurde.',
+        template: 'Erstmals seit {0} gab es eine Abstimmung mit Initiative, {1} und {2}. Die Stichfrage kam nicht zur Anwendung, da nur der {3} angenommen wurde.',
+        blanks: ['2010', 'Gegenentwurf', 'Stichfrage', 'Gegenentwurf'],
+      },
+      {
+        type: 'match',
+        label: 'Zuordnung',
+        question: 'Ordne die Ergebnisse korrekt zu.',
+        pairs: [
+          { left: 'Bargeld-Initiative', right: '54.4% Nein' },
+          { left: 'Bargeld-Gegenentwurf', right: '73.4% Ja' },
+          { left: 'Stichfrage', right: 'Nicht anwendbar' },
+        ]
       },
     ]
   },
@@ -146,73 +177,96 @@ const VORLAGEN = {
   solothurn: {
     tab: 'kantonal',
     title: 'Solothurn: Familienzulagen',
-    subtitle: 'Höhere Kinder- und Ausbildungszulagen',
+    subtitle: 'Höhere Kinder- und Ausbildungszulagen – JA 59.1%',
     url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmung-kanton-solothurn-ja-zu-hoeheren-kinder-und-ausbildungszulagen',
-    result: 'JA 59%',
+    result: 'JA 59.1%',
     activities: [
       {
         type: 'slider',
         label: 'Schätzfrage',
         question: 'Wie hoch war der Ja-Anteil in Solothurn für höhere Familienzulagen?',
         min: 40, max: 80, step: 1, unit: '%',
-        correct: 59, tolerance: 4,
-        hint: 'SRF berichtete über das Ergebnis.'
+        correct: 59, tolerance: 3,
+        hint: 'SRF berichtete über das definitive Ergebnis.'
       },
       {
         type: 'drag',
         label: 'Drag & Drop',
-        question: 'Was wurde in Solothurn angenommen, was abgelehnt?',
+        question: 'Was wurde in Solothurn angenommen, was abgelehnt? Ziehe nur die angenommenen Vorlagen.',
         correct: ['Höhere Familienzulagen'],
         distractors: ['Änderungen Sozialgesetz zulasten Gemeinden'],
+      },
+      {
+        type: 'fill',
+        label: 'Lückentext',
+        question: 'Ergänze: Die Kinderzulagen steigen von CHF {0} auf CHF {1} pro Monat. Die Mehrkosten von knapp CHF {2} Mio. werden hauptsächlich durch die {3} finanziert.',
+        template: 'Die Kinderzulagen steigen von CHF {0} auf CHF {1} pro Monat. Die Mehrkosten von knapp CHF {2} Mio. werden hauptsächlich durch die {3} finanziert.',
+        blanks: ['215', '230', '8', 'Arbeitgeber'],
       },
     ]
   },
   aargau: {
     tab: 'kantonal',
     title: 'Aargau: Radaranlagen',
-    subtitle: 'Bewilligungspflicht für stationäre Radar',
-    url: 'https://www.srf.ch/news/urnengaenge-im-kanton-aargau-08-03-2026',
-    result: 'Ergebnis ausstehend',
+    subtitle: 'Bewilligungspflicht für stationäre Radar – JA 55.5%',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmung-kanton-aargau-ein-nein-zu-fix-installierten-radargeraeten',
+    result: 'JA 55.5%',
     activities: [
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'Ergänze: Im Aargau wird über eine {0} abgestimmt, die eine {1} für stationäre {2} verlangt.',
-        template: 'Im Aargau wird über eine {0} abgestimmt, die eine {1} für stationäre {2} verlangt.',
-        blanks: ['Initiative', 'Bewilligungspflicht', 'Radaranlagen'],
+        question: 'Ergänze: Stationäre Radaranlagen brauchen neu eine Bewilligung des {0}. Diese wird nur erteilt bei einem erheblichen {1}. Semistationäre Anlagen dürfen max. {2} Stunden am selben Ort stehen.',
+        template: 'Stationäre Radaranlagen brauchen neu eine Bewilligung des {0}. Diese wird nur erteilt bei einem erheblichen {1}. Semistationäre Anlagen dürfen max. {2} Stunden am selben Ort stehen.',
+        blanks: ['Regierungsrats', 'Verkehrssicherheitsdefizit', '72'],
       },
       {
         type: 'match',
         label: 'Zuordnung',
-        question: 'Welche Vorlage gehört zu welchem Kanton?',
+        question: 'Welche kantonale Vorlage gehört zu welchem Kanton und Ergebnis?',
         pairs: [
-          { left: 'Radaranlagen', right: 'Aargau' },
-          { left: 'Familienzulagen', right: 'Solothurn' },
-          { left: 'Tempo 30', right: 'Basel-Landschaft' },
+          { left: 'Radaranlagen – JA 55.5%', right: 'Aargau' },
+          { left: 'Familienzulagen – JA 59.1%', right: 'Solothurn' },
+          { left: 'Tempo 30 – NEIN 61.5%', right: 'Basel-Landschaft' },
         ]
+      },
+      {
+        type: 'slider',
+        label: 'Schätzfrage',
+        question: 'Wie hoch war der Ja-Anteil im Aargau für die Radar-Bewilligungspflicht?',
+        min: 35, max: 75, step: 1, unit: '%',
+        correct: 56, tolerance: 3,
+        hint: 'Lies den SRF-Artikel zum Aargauer Ergebnis.'
       },
     ]
   },
   baselland: {
     tab: 'kantonal',
     title: 'Basel-Landschaft: Tempo 30',
-    subtitle: 'Volksabstimmung für Tempo-30-Zonen',
-    url: 'https://www.srf.ch/news/kantonale-und-kommunale-abstimmungen-08-03-2026',
-    result: 'Ergebnis ausstehend',
+    subtitle: 'Initiative und Gegenvorschlag abgelehnt',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmung-kanton-baselland-knappes-nein-bei-praemienvorlage-klares-nein-bei-tempo-30',
+    result: 'Initiative NEIN 61.5% / Gegenvorschlag NEIN 55.1%',
     activities: [
       {
         type: 'drag',
         label: 'Drag & Drop',
-        question: 'Was verlangt die Vorlage in Basel-Landschaft?',
-        correct: ['Einverständnis der Stimmberechtigten für Tempo-30 auf Hauptstrassen'],
-        distractors: ['Generelles Tempolimit 30 im ganzen Kanton', 'Abschaffung aller Tempo-30-Zonen'],
+        question: 'Was stimmt zum Tempo-30-Ergebnis in Basel-Landschaft?',
+        correct: ['Initiative mit 61.5% abgelehnt', 'Gegenvorschlag mit 55.1% abgelehnt', 'Beide Vorlagen verworfen'],
+        distractors: ['Initiative angenommen', 'Gegenvorschlag angenommen', 'Stichfrage war entscheidend'],
       },
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'Gemeinden sollen beim Kanton nur dann eine {0} auf einer {1} beantragen können, wenn das {2} der Stimmberechtigten vorliegt.',
-        template: 'Gemeinden sollen beim Kanton nur dann eine {0} auf einer {1} beantragen können, wenn das {2} der Stimmberechtigten vorliegt.',
-        blanks: ['Tempo-30-Zone', 'Hauptstrasse', 'Einverständnis'],
+        question: 'Ergänze: Die Tempo-30-{0} wurde mit {1}% Nein abgelehnt. Der {2} scheiterte ebenfalls mit {3}% Nein.',
+        template: 'Die Tempo-30-{0} wurde mit {1}% Nein abgelehnt. Der {2} scheiterte ebenfalls mit {3}% Nein.',
+        blanks: ['Initiative', '61.5', 'Gegenvorschlag', '55.1'],
+      },
+      {
+        type: 'slider',
+        label: 'Schätzfrage',
+        question: 'Wie hoch war der Nein-Anteil zur Tempo-30-Initiative in Basel-Landschaft?',
+        min: 40, max: 80, step: 1, unit: '%',
+        correct: 62, tolerance: 3,
+        hint: 'Finde das definitive Ergebnis im SRF-Artikel.'
       },
     ]
   },
@@ -221,57 +275,73 @@ const VORLAGEN = {
   schaffhausen: {
     tab: 'kommunal',
     title: 'Schaffhausen: ÖV-Finanzierung',
-    subtitle: 'Kanton soll ÖV stärker mitfinanzieren',
-    url: 'https://www.srf.ch/news/kantonale-und-kommunale-abstimmungen-08-03-2026',
-    result: 'Ergebnis ausstehend',
+    subtitle: 'Kanton beteiligt sich stärker – JA 65.6%',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmung-kanton-schaffhausen-klares-ja-zur-neuen-oev-finanzierung',
+    result: 'JA 65.6%',
     activities: [
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'In Schaffhausen geht es um die Frage, ob der {0} den {1} stärker mitfinanzieren und damit die {2} entlasten soll.',
-        template: 'In Schaffhausen geht es um die Frage, ob der {0} den {1} stärker mitfinanzieren und damit die {2} entlasten soll.',
-        blanks: ['Kanton', 'ÖV', 'Gemeinden'],
+        question: 'Ergänze: Der Gemeindeanteil beim Regionalverkehr sinkt von {0}% auf {1}%. Die Obergrenze liegt bei CHF {2} Mio. jährlich.',
+        template: 'Der Gemeindeanteil beim Regionalverkehr sinkt von {0}% auf {1}%. Die Obergrenze liegt bei CHF {2} Mio. jährlich.',
+        blanks: ['25', '22.5', '4.5'],
       },
       {
         type: 'match',
         label: 'Zuordnung',
-        question: 'Welches Thema gehört zu welcher Gemeinde/Region?',
+        question: 'Welches Thema gehört zu welchem Kanton?',
         pairs: [
-          { left: 'ÖV-Finanzierung', right: 'Schaffhausen' },
-          { left: 'Abwahlentschädigung', right: 'Uri' },
+          { left: 'ÖV-Finanzierung – JA 65.6%', right: 'Schaffhausen' },
+          { left: 'Abwahlentschädigung – JA 66.6%', right: 'Uri' },
           { left: 'E-Voting-Panne', right: 'Basel-Stadt' },
         ]
+      },
+      {
+        type: 'slider',
+        label: 'Schätzfrage',
+        question: 'Wie hoch war der Ja-Anteil in Schaffhausen für die ÖV-Finanzierung?',
+        min: 40, max: 85, step: 1, unit: '%',
+        correct: 66, tolerance: 3,
+        hint: 'Die Stimmbeteiligung in Schaffhausen war bemerkenswert hoch: 71.9%.'
       },
     ]
   },
   uri: {
     tab: 'kommunal',
     title: 'Uri: Abwahlentschädigung',
-    subtitle: 'Keine Abfindung für abgewählte Regierungsräte?',
-    url: 'https://www.srf.ch/news/kantonale-und-kommunale-abstimmungen-08-03-2026',
-    result: 'Ergebnis ausstehend',
+    subtitle: 'Keine Abfindung mehr – JA 66.6%',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmung-kanton-uri-volk-streicht-entschaedigung-fuer-abgewaehlte-regierungsmitglieder',
+    result: 'JA 66.6%',
     activities: [
       {
         type: 'drag',
         label: 'Drag & Drop',
-        question: 'Was soll in Uri geändert werden?',
-        correct: ['Abwahlentschädigung für Regierungsräte abschaffen'],
-        distractors: ['Höhere Löhne für Regierungsräte', 'Neue Regierungsratssitze schaffen'],
+        question: 'Welche Fakten stimmen zur Uri-Abstimmung?',
+        correct: ['Alle 19 Gemeinden stimmten Ja', 'Initiative der Jungen SVP', 'Entschädigung von ca. CHF 90000 gestrichen'],
+        distractors: ['Regierung empfahl Annahme', 'Nur 5 Gemeinden dafür', 'Entschädigung wird erhöht'],
       },
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'Abgewählte {0} sollen in Zukunft keine {1} mehr erhalten.',
-        template: 'Abgewählte {0} sollen in Zukunft keine {1} mehr erhalten.',
-        blanks: ['Regierungsräte', 'Abwahlentschädigung'],
+        question: 'Ergänze: Die Initiative wurde in allen {0} Gemeinden angenommen. Die Regelung galt seit {1} und kam nur einmal zur Anwendung ({2}).',
+        template: 'Die Initiative wurde in allen {0} Gemeinden angenommen. Die Regelung galt seit {1} und kam nur einmal zur Anwendung ({2}).',
+        blanks: ['19', '2006', '2024'],
+      },
+      {
+        type: 'slider',
+        label: 'Schätzfrage',
+        question: 'Wie hoch war der Ja-Anteil in Uri für die Abschaffung der Abwahlentschädigung?',
+        min: 40, max: 85, step: 1, unit: '%',
+        correct: 67, tolerance: 3,
+        hint: 'Das Ergebnis war deutlich. Finde die Zahl auf SRF.'
       },
     ]
   },
   baselstadt: {
     tab: 'kommunal',
     title: 'Basel-Stadt: E-Voting-Panne',
-    subtitle: '2048 Stimmen wegen USB-Sticks ungültig',
-    url: 'https://www.srf.ch/news/abstimmungen-vom-8-3-2026',
+    subtitle: '2048 Stimmen wegen USB-Sticks nicht zählbar',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/abstimmung-vom-8-maerz-elektronische-stimmen-im-kanton-basel-stadt-wohl-nicht-zaehlbar',
     result: 'Technische Panne',
     activities: [
       {
@@ -285,9 +355,16 @@ const VORLAGEN = {
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'In Basel-Stadt konnten {0} elektronisch abgegebene Stimmen wegen nicht verwendbarer {1} nicht gelesen werden.',
-        template: 'In Basel-Stadt konnten {0} elektronisch abgegebene Stimmen wegen nicht verwendbarer {1} nicht gelesen werden.',
-        blanks: ['2048', 'USB-Sticks'],
+        question: 'Ergänze: {0} elektronische Stimmen konnten wegen defekter {1} nicht entschlüsselt werden. Das Problem lag bei einer externen {2} des Kantons, nicht beim System der {3}.',
+        template: '{0} elektronische Stimmen konnten wegen defekter {1} nicht entschlüsselt werden. Das Problem lag bei einer externen {2} des Kantons, nicht beim System der {3}.',
+        blanks: ['2048', 'USB-Sticks', 'Hardware-Komponente', 'Post'],
+      },
+      {
+        type: 'drag',
+        label: 'Drag & Drop',
+        question: 'Was stimmt zur E-Voting-Panne? Ziehe die richtigen Aussagen.',
+        correct: ['Defekte USB-Sticks zur Entschlüsselung', 'Betraf Auslandschweizer Stimmen', 'Bundeskanzlei bestätigt Verletzung politischer Rechte'],
+        distractors: ['Hackerangriff auf das System', 'Alle Kantone betroffen', 'Stimmen konnten nachträglich gezählt werden'],
       },
     ]
   },
@@ -296,35 +373,50 @@ const VORLAGEN = {
   zuerich: {
     tab: 'wahlen',
     title: 'Stadtratswahlen Zürich',
-    subtitle: '9 Sitze – Enges Rennen',
-    url: 'https://www.srf.ch/news/schweiz/wahlen-stadt-zuerich-enges-rennen-um-die-neun-stadtratssitze-in-zuerich',
-    result: 'Ergebnisse laufend',
+    subtitle: 'Grüne gewinnen, FDP verliert – 7 von 9 Sitzen links',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/wahlen-zuerich-und-winterthur-zweiter-wahlgang-fuer-winterthurer-stadtpraesidium',
+    result: 'SP 4, Grüne 3, FDP 1, GLP 1',
     activities: [
       {
         type: 'match',
         label: 'Zuordnung',
-        question: 'Ordne die Kandidaten ihren Parteien zu.',
+        question: 'Ordne die neu gewählten Stadträte ihren Parteien zu.',
         pairs: [
-          { left: 'Balthasar Glättli', right: 'Grüne' },
-          { left: 'Ueli Bamert', right: 'SVP' },
-          { left: 'Serap Kahriman', right: 'GLP' },
+          { left: 'Balthasar Glättli (neu)', right: 'Grüne' },
+          { left: 'Céline Widmer (neu)', right: 'SP' },
+          { left: 'Tobias Langenegger (neu)', right: 'SP' },
         ]
       },
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'Die SVP ist seit {0} Jahren nicht mehr im Zürcher {1} vertreten. Balthasar Glättli sass {2} Jahre im Nationalrat.',
-        template: 'Die SVP ist seit {0} Jahren nicht mehr im Zürcher {1} vertreten. Balthasar Glättli sass {2} Jahre im Nationalrat.',
-        blanks: ['35', 'Stadtrat', '14'],
+        question: 'Ergänze: Die Grünen halten erstmals {0} Sitze im Stadtrat. Die FDP verlor einen Sitz und hat nur noch {1}. Für das Stadtpräsidium braucht es einen {2}. Wahlgang am {3}. Mai.',
+        template: 'Die Grünen halten erstmals {0} Sitze im Stadtrat. Die FDP verlor einen Sitz und hat nur noch {1}. Für das Stadtpräsidium braucht es einen {2}. Wahlgang am {3}. Mai.',
+        blanks: ['3', '1', '2.', '10'],
+      },
+      {
+        type: 'drag',
+        label: 'Drag & Drop',
+        question: 'Welche Aussagen treffen auf die Zürcher Stadtratswahl zu?',
+        correct: ['Grüne gewinnen einen Sitz dazu', 'FDP verliert einen Sitz', '7 von 9 Sitzen sind links (SP+Grüne)'],
+        distractors: ['SVP gewinnt einen Sitz', 'GLP verliert ihren Sitz', 'Raphael Golta wurde im 1. Wahlgang Stadtpräsident'],
+      },
+      {
+        type: 'slider',
+        label: 'Schätzfrage',
+        question: 'Wie viele Stimmen erhielt der meistgewählte Stadtrat Raphael Golta (SP)?',
+        min: 40000, max: 90000, step: 1000, unit: '',
+        correct: 70478, tolerance: 3000,
+        hint: 'Golta war klar der Stimmenkönig. Finde die Zahl im SRF-Artikel.'
       },
     ]
   },
   winterthur: {
     tab: 'wahlen',
     title: 'Stadtratswahlen Winterthur',
-    subtitle: 'Duell ums Stadtpräsidium',
-    url: 'https://www.srf.ch/news/schweiz/wahlen-stadt-winterthur-winterthur-vor-richtungswahl-enges-duell-ums-stadtpraesidium',
-    result: 'Ergebnisse laufend',
+    subtitle: 'FDP gewinnt Sitz, GLP raus – 2. Wahlgang nötig',
+    url: 'https://www.srf.ch/news/schweiz/abstimmungen-8-3-2026/wahlen-winterthur-winterthur-hat-noch-keinen-neuen-stadtpraesidenten',
+    result: 'SP 3, FDP 2, Grüne 1, Mitte 1',
     activities: [
       {
         type: 'match',
@@ -339,9 +431,16 @@ const VORLAGEN = {
       {
         type: 'fill',
         label: 'Lückentext',
-        question: 'Stadtpräsident {0} prägte Winterthur {1} Jahre. Um seine Nachfolge kämpfen {2} (SP) und {3} (FDP).',
-        template: 'Stadtpräsident {0} prägte Winterthur {1} Jahre. Um seine Nachfolge kämpfen {2} (SP) und {3} (FDP).',
-        blanks: ['Michael Künzle', '14', 'Kaspar Bopp', 'Stefan Fritschi'],
+        question: 'Ergänze: {0} (SP) führt knapp mit {1} Stimmen vor {2} (FDP). Keiner erreichte das {3}. Der 2. Wahlgang ist am {4}. Mai.',
+        template: '{0} (SP) führt knapp mit {1} Stimmen vor {2} (FDP). Keiner erreichte das {3}. Der 2. Wahlgang ist am {4}. Mai.',
+        blanks: ['Kaspar Bopp', '15843', 'Stefan Fritschi', 'absolute Mehr', '10'],
+      },
+      {
+        type: 'drag',
+        label: 'Drag & Drop',
+        question: 'Was stimmt zu den Winterthurer Wahlen?',
+        correct: ['GLP verliert ihren Stadtratssitz', 'FDP gewinnt einen zweiten Sitz', 'Stadtrat verschiebt sich leicht nach rechts'],
+        distractors: ['SP verliert einen Sitz', 'Grüne gewinnen einen Sitz', 'Stadtpräsident im 1. Wahlgang gewählt'],
       },
     ]
   },
